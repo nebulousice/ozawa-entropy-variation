@@ -1,0 +1,130 @@
+run_cert.sh: fresh clone of /c/Users/<user>/Documents/research-pipeline at commit 0c620bdc478c629d7338ab4281fd9cfefb363667 in C:/Users/<user>/AppData/Local/Temp/claude/3585629b1257959c/81d0dd50-cccb-4297-a7a6-f3708ab70b70/scratchpad/ozcert/clone
+run_cert.sh: invoking: python targets/ozawa-entropy-variation/cert/OZ-1.py
+command : python OZ-1.py
+cwd     : C:\Users\<user>\AppData\Local\Temp\claude\3585629b1257959c\81d0dd50-cccb-4297-a7a6-f3708ab70b70\scratchpad\ozcert\clone
+date    : 2026-11-27T13:09:29+00:00
+commit  : 0c620bdc478c629d7338ab4281fd9cfefb363667  (script status: ?? targets/ozawa-entropy-variation/cert/OZ-1.py)
+script  : sha256 0d288d0018cd185699e7ba3cacd996614f062dce2aaf81255678d135fead5b64
+python  : 3.12.10 (Windows-11-10.0.26200-SP0)
+flint   : python-flint 0.7.1, Arb precision 256 bits
+
+Witness family: rho = diag(1,0), sigma = v v^T, v = ((N-1)/(N+1), 2m/(N+1)),
+                A = (1/(N+1)) [[1,-m],[-m,N]],  N = m^2
+
+m = 1  (N = 1)
+  ok    m=1: rho, sigma symmetric, trace 1, PSD (exact)
+  ok    m=1: A symmetric PSD (exact; A >= 0 as the question requires)
+  LHS = Tr(|rho-sigma| A)       = 1.000000000000000000000000
+  (phi+psi)(A^2) = Tr(S A^2)    = 1  (exact)
+  delta (natural log)           = [0.6931471805599453094172321 +/- 2.15e-26]
+  delta (log base 2)            = [1.000000000000000000000000 +/- 1e-29]
+  base e: LHS^2 - RHS^2 = [-4.5451774444795624753 +/- 3.79e-20] ; (LHS/RHS)^2 = [0.18033688011112042592 +/- 9.7e-24]
+  ok    m=1 base e: sign of LHS^2 - RHS^2 certified (no violation), expected no violation
+  ok    m=1 base e: closed form ball overlaps definition-level ball (consistency only)
+  base 2: LHS^2 - RHS^2 = [-7.0000000000000000000 +/- 1e-24] ; (LHS/RHS)^2 = [0.12500000000000000000 +/- 1e-25]
+  ok    m=1 base 2: sign of LHS^2 - RHS^2 certified (no violation), expected no violation
+  ok    m=1 base 2: closed form ball overlaps definition-level ball (consistency only)
+
+m = 2  (N = 4)
+  ok    m=2: rho, sigma symmetric, trace 1, PSD (exact)
+  ok    m=2: A symmetric PSD (exact; A >= 0 as the question requires)
+  LHS = Tr(|rho-sigma| A)       = [0.8000000000000000000000000 +/- 3e-30]
+  (phi+psi)(A^2) = Tr(S A^2)    = 2/5  (exact)
+  delta (natural log)           = [0.5004024235381878795331879 +/- 3.89e-26]
+  delta (log base 2)            = [0.7219280948873623478703194 +/- 2.95e-26]
+  base e: LHS^2 - RHS^2 = [-0.96128775532220121451 +/- 3.80e-21] ; (LHS/RHS)^2 = [0.39967832007259879400 +/- 5.27e-22]
+  ok    m=2 base e: sign of LHS^2 - RHS^2 certified (no violation), expected no violation
+  ok    m=2 base e: closed form ball overlaps definition-level ball (consistency only)
+  base 2: LHS^2 - RHS^2 = [-1.6701699036395595132 +/- 1.50e-20] ; (LHS/RHS)^2 = [0.27703590068925724993 +/- 3.28e-21]
+  ok    m=2 base 2: sign of LHS^2 - RHS^2 certified (no violation), expected no violation
+  ok    m=2 base 2: closed form ball overlaps definition-level ball (consistency only)
+
+m = 3  (N = 9)
+  ok    m=3: rho, sigma symmetric, trace 1, PSD (exact)
+  ok    m=3: A symmetric PSD (exact; A >= 0 as the question requires)
+  LHS = Tr(|rho-sigma| A)       = [0.6000000000000000000000000 +/- 3e-30]
+  (phi+psi)(A^2) = Tr(S A^2)    = 1/5  (exact)
+  delta (natural log)           = [0.3250829733914482395065500 +/- 2.83e-26]
+  delta (log base 2)            = [0.4689955935892812212535893 +/- 3.04e-26]
+  base e: LHS^2 - RHS^2 = [-0.16013275742631718321 +/- 4.81e-22] ; (LHS/RHS)^2 = [0.69213098936764843326 +/- 3.56e-21]
+  ok    m=3 base e: sign of LHS^2 - RHS^2 certified (no violation), expected no violation
+  ok    m=3 base e: closed form ball overlaps definition-level ball (consistency only)
+  base 2: LHS^2 - RHS^2 = [-0.39039294974284995401 +/- 4.26e-21] ; (LHS/RHS)^2 = [0.47974864385835099575 +/- 3.23e-21]
+  ok    m=3 base 2: sign of LHS^2 - RHS^2 certified (no violation), expected no violation
+  ok    m=3 base 2: closed form ball overlaps definition-level ball (consistency only)
+
+m = 4  (N = 16)
+  ok    m=4: rho, sigma symmetric, trace 1, PSD (exact)
+  ok    m=4: A symmetric PSD (exact; A >= 0 as the question requires)
+  LHS = Tr(|rho-sigma| A)       = [0.4705882352941176470588235 +/- 2.95e-26]
+  (phi+psi)(A^2) = Tr(S A^2)    = 2/17  (exact)
+  delta (natural log)           = [0.2237180760658337389140725 +/- 1.36e-26]
+  delta (log base 2)            = [0.3227569588973982317834778 +/- 2.45e-26]
+  base e: LHS^2 - RHS^2 = [0.010895097958800079638 +/- 3.37e-23] ; (LHS/RHS)^2 = [1.0517438813384868885 +/- 2.48e-20]
+  ok    m=4 base e: sign of LHS^2 - RHS^2 certified (violation), expected violation
+  ok    m=4 base e: closed form ball overlaps definition-level ball (consistency only)
+  base 2: LHS^2 - RHS^2 = [-0.082317968235613560710 +/- 2.92e-22] ; (LHS/RHS)^2 = [0.72901330602094586528 +/- 2.68e-21]
+  ok    m=4 base 2: sign of LHS^2 - RHS^2 certified (no violation), expected no violation
+  ok    m=4 base 2: closed form ball overlaps definition-level ball (consistency only)
+
+m = 5  (N = 25)
+  sigma = [['144/169', '60/169'], ['60/169', '25/169']]
+  A     = [['1/26', '-5/26'], ['-5/26', '25/26']]
+  ok    m=5: rho, sigma symmetric, trace 1, PSD (exact)
+  ok    m=5: A symmetric PSD (exact; A >= 0 as the question requires)
+  LHS = Tr(|rho-sigma| A)       = [0.3846153846153846153846154 +/- 1.54e-26]
+  (phi+psi)(A^2) = Tr(S A^2)    = 1/13  (exact)
+  delta (natural log)           = [0.1630236294943659404692593 +/- 6.83e-27]
+  delta (log base 2)            = [0.2351933818192414914154291 +/- 3.61e-26]
+  base e: LHS^2 - RHS^2 = [0.047606760547845811782 +/- 2.31e-22] ; (LHS/RHS)^2 = [1.4745384833486548170 +/- 5.78e-21]
+  ok    m=5 base e: sign of LHS^2 - RHS^2 certified (violation), expected violation
+  ok    m=5 base e: closed form ball overlaps definition-level ball (consistency only)
+  base 2: LHS^2 - RHS^2 = [0.0031946052709993188923 +/- 1.98e-23] ; (LHS/RHS)^2 = [1.0220721923602579505 +/- 7.25e-21]
+  ok    m=5 base 2: sign of LHS^2 - RHS^2 certified (violation), expected violation
+  ok    m=5 base 2: closed form ball overlaps definition-level ball (consistency only)
+
+m = 6  (N = 36)
+  ok    m=6: rho, sigma symmetric, trace 1, PSD (exact)
+  ok    m=6: A symmetric PSD (exact; A >= 0 as the question requires)
+  LHS = Tr(|rho-sigma| A)       = [0.3243243243243243243243243 +/- 2.44e-26]
+  (phi+psi)(A^2) = Tr(S A^2)    = 2/37  (exact)
+  delta (natural log)           = [0.1242508373896309292735451 +/- 3.59e-26]
+  delta (log base 2)            = [0.1792560669283215368667446 +/- 1.11e-26]
+  base e: LHS^2 - RHS^2 = [0.051456175504264784419 +/- 3.29e-22] ; (LHS/RHS)^2 = [1.9576789046537448468 +/- 3.59e-20]
+  ok    m=6 base e: sign of LHS^2 - RHS^2 certified (violation), expected violation
+  ok    m=6 base e: closed form ball overlaps definition-level ball (consistency only)
+  base 2: LHS^2 - RHS^2 = [0.027670130298344521676 +/- 3.24e-22] ; (LHS/RHS)^2 = [1.3569596132024252370 +/- 2.98e-20]
+  ok    m=6 base 2: sign of LHS^2 - RHS^2 certified (violation), expected violation
+  ok    m=6 base 2: closed form ball overlaps definition-level ball (consistency only)
+
+m = 7  (N = 49)
+  sigma = [['576/625', '168/625'], ['168/625', '49/625']]
+  A     = [['1/50', '-7/50'], ['-7/50', '49/50']]
+  ok    m=7: rho, sigma symmetric, trace 1, PSD (exact)
+  ok    m=7: A symmetric PSD (exact; A >= 0 as the question requires)
+  LHS = Tr(|rho-sigma| A)       = [0.2800000000000000000000000 +/- 3e-30]
+  (phi+psi)(A^2) = Tr(S A^2)    = 1/25  (exact)
+  delta (natural log)           = [0.09803911327973198061225941 +/- 7.63e-28]
+  delta (log base 2)            = [0.1414405425418206451543790 +/- 2.80e-27]
+  base e: LHS^2 - RHS^2 = [0.047027483750485766204 +/- 7.70e-23] ; (LHS/RHS)^2 = [2.4990026103250143671 +/- 4.25e-20]
+  ok    m=7 base e: sign of LHS^2 - RHS^2 certified (violation), expected violation
+  ok    m=7 base e: closed form ball overlaps definition-level ball (consistency only)
+  base 2: LHS^2 - RHS^2 = [0.033139026386617393551 +/- 4.02e-22] ; (LHS/RHS)^2 = [1.7321766135587273819 +/- 4.17e-20]
+  ok    m=7 base 2: sign of LHS^2 - RHS^2 certified (violation), expected violation
+  ok    m=7 base 2: closed form ball overlaps definition-level ball (consistency only)
+
+Certified constants (Arb balls, radius shown):
+  m=5: LHS = [0.384615384615384615384615384615 +/- 3.85e-31]   (exact value 2m/(N+1) = 5/13; ball contains it: True)
+        Tr(S A^2) = 1/13 (exact)
+        delta_e = [0.163023629494365940469259306819 +/- 2.89e-31] ; RHS_e = [0.316736852189628267297738839794 +/- 8.88e-32] ; (LHS/RHS_e)^2 = [1.47453848334865481700577050990 +/- 2.44e-30]
+        delta_2 = [0.235193381819241491415429136008 +/- 1.33e-31] ; RHS_2 = [0.380439730853444009469967240597 +/- 7.79e-33] ; (LHS/RHS_2)^2 = [1.02207219236025795050724456849 +/- 2.05e-30]
+        LHS^2 - RHS_e^2 = [0.0476067605478458117822309591171 +/- 2.45e-32] ; LHS^2 - RHS_2^2 = [0.00319460527099931889228029500108 +/- 4.37e-33]
+  m=7: LHS = [0.280000000000000000000000000000 +/- 3e-35]   (exact value 2m/(N+1) = 7/25; ball contains it: True)
+        Tr(S A^2) = 1/25 (exact)
+        delta_e = [0.0980391132797319806122594107619 +/- 1.96e-32] ; RHS_e = [0.177122884601381291404061470095 +/- 4.17e-32] ; (LHS/RHS_e)^2 = [2.49900261032501436705753775929 +/- 3.51e-30]
+        delta_2 = [0.141440542541820645154378997204 +/- 3.92e-31] ; RHS_2 = [0.212746265803615473116774695134 +/- 3.85e-31] ; (LHS/RHS_2)^2 = [1.73217661355872738185832811642 +/- 1.45e-31]
+        LHS^2 - RHS_e^2 = [0.0470274837504857662040769885562 +/- 1.43e-32] ; LHS^2 - RHS_2^2 = [0.0331390263866173935505987208946 +/- 5.44e-33]
+
+PASS: OZ-1 primary certificate (Arb). Literal inequality violated for m = 4..7 (natural log)
+      and m = 5..7 (base 2); not violated for m = 1..3 (natural) and m = 1..4 (base 2).
+run_cert.sh: exit code 0, wall time 27.74 s

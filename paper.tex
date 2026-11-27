@@ -1,0 +1,549 @@
+\documentclass[11pt]{amsart}
+\usepackage{amssymb,amsthm,array,hyperref,booktabs}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{mainthm}{Main Theorem}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\artanh}{artanh}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\LHS}{\mathrm{LHS}}
+\newcommand{\RHS}{\mathrm{RHS}}
+\newcommand{\dd}{\mathrm{d}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\renewcommand{\labelenumi}{(\theenumi)}
+\setlength{\emergencystretch}{3em}
+
+\title[Ozawa's entropy--variation question]{Ozawa's entropy--variation question, read literally, has a negative answer}
+\date{2026-11-27}
+
+\begin{document}
+
+\begin{abstract}
+At the 2018 Oberwolfach workshop on operator spaces and quantum probability, N.~Ozawa asked whether \(\abs{\varphi-\psi}(A)\le(8\,\delta(\varphi,\psi)\,(\varphi+\psi)(A^2))^{1/2}\) for all states \(\varphi,\psi\) and all \(A\ge0\), where \(\delta\) is the quantum Jensen--Shannon divergence. Read literally, with \(\abs{\varphi-\psi}\) the absolute value of the functional \(\varphi-\psi\), the answer is no. We give explicit counterexamples with rational \(2\times2\) matrices, in natural logarithm and in base~2. We show that no constant in place of \(8\) and no function of \(\delta\) can repair the inequality. We also show that it holds for commuting states and whenever \(\delta\ge1/4\). The counterexamples are confirmed by two independent rigorous computations, and the negative answer is formalized in the Lean~4 proof assistant. Status: the hand proofs have not yet been independently reviewed;  \textbf{Expert verification required.} Verified so far with Lean 4 + Mathlib (the main theorem, checked twice), two independent exact computer certificates (Arb interval arithmetic and pure rational arithmetic), and AI referees (Claude models; review in progress).
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+\subsection{The question}
+The report of the Oberwolfach workshop \emph{Interactions between Operator Space Theory and Quantum Probability with Applications to Quantum Information} (6--12 May 2018) ends with a list of open problems \cite{owr18}. Item~(5), due to Narutaka Ozawa, has two parts. Part~(i) reads as follows (p.~1373 of \cite{owr18}):
+\begin{quote}
+Let \(H(\varphi)\) denote the von Neumann entropy of \(\varphi\) and
+\(\delta(\varphi,\psi)=H((\varphi+\psi)/2)-(H(\varphi)+H(\psi))/2\).
+Is it true that \(\abs{\varphi-\psi}(A)\le(8\,\delta(\varphi,\psi)\,(\varphi+\psi)(A^2))^{1/2}\) for every \(A\ge0\)?
+\end{quote}
+Here \(\varphi\) and \(\psi\) are states, and \(\delta(\varphi,\psi)\) is the quantum Jensen--Shannon divergence \cite{bh09}. All terms are defined precisely in Section~\ref{sec:notation}. The question is listed as open in the MathDB catalogue \cite{mathdb}. This note concerns part~(i) only.
+
+\subsection{The answer}
+The notation \(\abs{\varphi-\psi}\) is the standard notation for the absolute value of the hermitian functional \(\varphi-\psi\). For states given by density matrices \(\rho\) and \(\sigma\), this absolute value is the functional \(X\mapsto\Tr(\abs{\rho-\sigma}X)\) (Lemma~\ref{lem:jordan}). With this literal reading the answer is negative.
+
+\begin{mainthm}
+Let
+\[
+\rho=\begin{pmatrix}1&0\\0&0\end{pmatrix},\qquad
+\sigma=\frac{1}{169}\begin{pmatrix}144&60\\60&25\end{pmatrix},\qquad
+A=\frac{1}{26}\begin{pmatrix}1&-5\\-5&25\end{pmatrix}.
+\]
+Then \(\rho\) and \(\sigma\) are density matrices of pure states on \(M_2(\C)\), \(A\ge0\), and
+\[
+\Tr\bigl(\abs{\rho-\sigma}A\bigr)=\frac{5}{13},\qquad \Tr\bigl((\rho+\sigma)A^2\bigr)=\frac{1}{13},\qquad \delta(\rho,\sigma)=h\Bigl(\frac{1}{26}\Bigr),
+\]
+where \(h\) is the binary entropy. Moreover
+\[
+\Tr\bigl(\abs{\rho-\sigma}A\bigr)>\Bigl(8\,\delta(\rho,\sigma)\,\Tr\bigl((\rho+\sigma)A^2\bigr)\Bigr)^{1/2},
+\]
+both with the natural logarithm and with the logarithm to base~\(2\). So the answer to Ozawa's question~(5)(i), read literally, is no.
+\end{mainthm}
+
+This is the case \(m=5\) of Theorem~\ref{thm:witness}, which also gives a second rational example (\(m=7\)). We also prove the following.
+\begin{itemize}
+\item No constant in place of \(8\) repairs the inequality: on a one-parameter family of pure qubit states the ratio of the two sides is unbounded (Theorem~\ref{thm:noconst}).
+\item No function of \(\delta\) repairs it either: on the same states, with a different test matrix, the squared left side equals twice \((\varphi+\psi)(A^2)\) at every value of \(\delta\) in \((0,\ln2]\) (Theorem~\ref{thm:nofunction}). The number~\(2\) is optimal (Proposition~\ref{prop:two}).
+\item Consequently the literal inequality holds whenever \(\delta\ge1/4\), and fails for some pair of pure qubit states at every value \(\delta\in(0,1/4)\) (Corollary~\ref{cor:threshold}).
+\item The failure persists for faithful states and in every dimension \(d\ge2\) (Corollary~\ref{cor:variants}).
+\item For commuting states the literal inequality is true (Proposition~\ref{prop:commuting}). This follows from the argument of Ozawa's paper \cite{ozawa20} and the Cauchy--Schwarz inequality.
+\end{itemize}
+
+\subsection{Prior work}
+Ozawa's paper \cite{ozawa20} works in the commutative setting. Its Taylor estimate for \(t\log t\) (display~(17) there), specialised to two points, gives the commutative inequality with the constant~\(8\) (Lemma~\ref{lem:twopoint} and Proposition~\ref{prop:commuting}). The sharp commutative constant is \(4\), by a result of Tops\o{}e \cite{topsoe00}. We know of no published answer to the noncommutative question. A search of the literature, of problem catalogues and of public repositories on 2026-11-27 found none, although some sources could not be completed; it will be repeated before any release. A related inequality between two quantum divergences was refuted in \cite{omega26} with the same kind of tools: an explicit rational qubit example and a Lean proof.
+
+\subsection{What is proved how}
+We separate three kinds of verification.
+\begin{itemize}
+\item \emph{By hand.} Every lemma, proposition, theorem and corollary in Sections~\ref{sec:notation}--\ref{sec:commuting} has a complete written proof here, and none of these proofs uses a computation. The only statement that rests on computation is Remark~\ref{rem:threshold}, which combines a hand argument with the computer verification. The hand proofs have not yet been independently reviewed.
+\item \emph{By computer} (Section~\ref{sec:computer}). Two independent programs, one in ball arithmetic and one in exact rational arithmetic, compute both sides of the inequality from the definitions for the first seven members of the family of Section~\ref{sec:family} and decide its sign rigorously. They agree. They are the only source of decimal values in this note.
+\item \emph{In Lean} (Section~\ref{sec:lean}). The Main Theorem, for \(m=5\) and \(m=7\) and both logarithm bases, and the negative answer as a universally quantified statement over \(2\times2\) complex matrices, are formalized in Lean~4 with the Mathlib library.
+\end{itemize}
+
+\subsection{Credit and status}
+The question is due to Narutaka Ozawa \cite{owr18}. The qubit pure-state counterexample family of Section~\ref{sec:family} was first pointed out to us in an unpublished external vetting report, received on 2026-11-27. We make no priority or novelty claim. Credit lines have not yet been drafted or approved. The hand proofs have not yet been through independent review, and  \textbf{Expert verification required.} Verified so far with Lean 4 + Mathlib (the main theorem, checked twice), two independent exact computer certificates (Arb interval arithmetic and pure rational arithmetic), and AI referees (Claude models; review in progress).
+
+\subsection{Plan}
+Section~\ref{sec:notation} fixes notation and the literal reading. Section~\ref{sec:lemmas} proves three elementary lemmas. Section~\ref{sec:family} computes everything in closed form on a family of pure qubit states. Section~\ref{sec:witness} proves the Main Theorem. Section~\ref{sec:robust} shows that the failure is robust. Section~\ref{sec:commuting} treats commuting states. Sections~\ref{sec:computer} and~\ref{sec:lean} describe the computer and Lean verification, and Section~\ref{sec:summary} summarises the status of each result.
+
+\section{Notation and the literal reading}\label{sec:notation}
+
+\subsection{Matrices and states}
+\(M_d=M_d(\C)\) is the algebra of complex \(d\times d\) matrices, \(I\) is the identity and \(\Tr\) is the trace. \(X^\dagger\) is the conjugate transpose, and \(X\) is \emph{hermitian} if \(X^\dagger=X\). For hermitian \(X\) we write \(X\ge0\) (\emph{positive semidefinite}) if \(\langle\xi,X\xi\rangle\ge0\) for all vectors \(\xi\), and \(X>0\) (\emph{positive definite}) if moreover \(X\) is invertible. \(\norm{X}\) is the operator norm. An \emph{orthogonal projection} is a hermitian \(P\) with \(P^2=P\).
+
+A \emph{density matrix} is a \(\rho\in M_d\) with \(\rho\ge0\) and \(\Tr\rho=1\). A \emph{state} on \(M_d\) is a functional \(\varphi(X)=\Tr(\rho X)\) with \(\rho\) a density matrix. Throughout, \(\varphi\) and \(\psi\) have density matrices \(\rho\) and \(\sigma\), and we write
+\[
+D=\rho-\sigma,\qquad S=\rho+\sigma,\qquad \omega=\tfrac12(\rho+\sigma).
+\]
+So \((\varphi+\psi)(A^2)=\Tr(SA^2)\). A state is \emph{pure} if its density matrix is a rank-one orthogonal projection, and \emph{faithful} if its density matrix is positive definite.
+
+\subsection{Entropy}
+Put \(\eta(\lambda)=-\lambda\ln\lambda\) for \(\lambda>0\) and \(\eta(0)=0\). For a density matrix \(\tau\) with eigenvalues \(\lambda_1,\dots,\lambda_d\) (with multiplicity), the \emph{von Neumann entropy} is \(H(\tau)=\sum_j\eta(\lambda_j)=-\Tr(\tau\ln\tau)\), with \(0\ln0=0\). The logarithm is natural unless stated otherwise. The source does not fix the base. In base~\(2\) the entropy is \(H/\ln2\), and \(\delta\) becomes \(\delta_2=\delta/\ln2\). Ozawa's quantity is
+\[
+\delta(\rho,\sigma)=H(\omega)-\tfrac12\bigl(H(\rho)+H(\sigma)\bigr).
+\]
+The \emph{binary entropy} is \(h(x)=-x\ln x-(1-x)\ln(1-x)\) for \(0<x<1\), and \(h(0)=h(1)=0\). Vectors are columns. For \(a,b\in\R^2\), \(ab^{T}\) is the matrix with entries \(a_ib_j\), and \(\langle a,b\rangle=a^{T}b\).
+
+\subsection{Absolute values}
+Let \(D\in M_d\) be hermitian with spectral decomposition \(D=\sum_j\lambda_jP_j\): the \(\lambda_j\) are the distinct eigenvalues, and the \(P_j\ne0\) are orthogonal projections with \(P_jP_k=0\) for \(j\ne k\) and \(\sum_jP_j=I\). Define
+\[
+D_+=\sum_{\lambda_j>0}\lambda_jP_j,\quad D_-=-\sum_{\lambda_j<0}\lambda_jP_j,\quad \abs{D}=D_++D_-=\sum_j\abs{\lambda_j}P_j .
+\]
+Then \(D_\pm\ge0\), \(D=D_+-D_-\), \(\abs{D}\ge0\) and \(\abs{D}^2=D^2\).
+
+A functional on \(M_d\) is \emph{positive} if it is nonnegative on positive semidefinite matrices. The \emph{absolute value} \(\abs{\omega}\) of a hermitian functional \(\omega\) is \(\omega_++\omega_-\), where \(\omega=\omega_+-\omega_-\) is its \emph{Jordan decomposition}: the unique decomposition into positive functionals with \(\norm{\omega}=\norm{\omega_+}+\norm{\omega_-}\) (see, for example, \cite{takesaki79}). The next lemma proves what we need for \(M_d\). Its proof computes the norm and then shows that a norm-additive decomposition must separate \(D_+\) from \(D_-\).
+
+\begin{lemma}\label{lem:jordan}
+Let \(D\in M_d\) be hermitian and \(\omega(X)=\Tr(DX)\), with \(\norm{\omega}=\sup\{\abs{\omega(X)} \mid \norm{X}\le1\}\).
+\begin{enumerate}
+\item \(\norm{\omega}=\Tr\abs{D}\).
+\item The functionals \(\omega_\pm=\Tr(D_\pm\,\cdot\,)\) are positive, \(\omega=\omega_+-\omega_-\), and \(\norm{\omega_+}+\norm{\omega_-}=\norm{\omega}\).
+\item If \(\omega=\omega_1-\omega_2\) with positive \(\omega_1,\omega_2\) and \(\norm{\omega_1}+\norm{\omega_2}=\norm{\omega}\), then \(\omega_1=\omega_+\) and \(\omega_2=\omega_-\). Hence \(\omega_1+\omega_2=\Tr(\abs{D}\,\cdot\,)\).
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) For \(B\ge0\) and any \(X\), \(\abs{\Tr(BX)}\le\norm{X}\Tr B\). Indeed, for an orthonormal basis \((e_k)\), \(\Tr(BX)=\Tr(B^{1/2}XB^{1/2})=\sum_k\langle B^{1/2}e_k,XB^{1/2}e_k\rangle\). Each term has absolute value at most \(\norm{X}\norm{B^{1/2}e_k}^2\), and these sum to \(\norm{X}\Tr B\).
+
+(b) Part~1. By (a), \(\abs{\omega(X)}\le\abs{\Tr(D_+X)}+\abs{\Tr(D_-X)}\le\norm{X}\Tr\abs{D}\). Let \(P=\sum_{\lambda_j>0}P_j\). Then \(PD=DP=D_+\) and \((I-P)D=-D_-\). The matrix \(X_0=2P-I\) is hermitian with \(X_0^2=I\), so \(\norm{X_0}=1\), and \(\omega(X_0)=\Tr D_++\Tr D_-=\Tr\abs{D}\).
+
+(c) Every linear functional on \(M_d\) is \(X\mapsto\Tr(BX)\) for a unique \(B\in M_d\), since the form \((B,X)\mapsto\Tr(BX)\) is nondegenerate (\(\Tr(BB^\dagger)>0\) for \(B\ne0\)). If the functional is positive, then \(\langle\xi,B\xi\rangle=\Tr(B\xi\xi^\dagger)\ge0\) for all \(\xi\in\C^d\). This forces \(B\) to be hermitian, so \(B\ge0\), and its norm is \(\Tr B\) by Part~1. Conversely, for \(B\ge0\) the functional \(\Tr(B\,\cdot\,)\) is positive, since \(\Tr(BX)=\Tr(X^{1/2}BX^{1/2})\ge0\) for \(X\ge0\).
+
+(d) Part~2 follows from (c), from \(D=D_+-D_-\), and from Part~1.
+
+(e) Part~3. By (c), \(\omega_i=\Tr(B_i\,\cdot\,)\) with \(B_i\ge0\), \(B_1-B_2=D\) and \(\Tr B_1+\Tr B_2=\Tr D_++\Tr D_-\). For \(B\ge0\) and an orthogonal projection \(Q\), \(\Tr(QB)=\Tr(QBQ)\ge0\). With \(P\) as in (b),
+\begin{align*}
+\Tr D_+&=\Tr(PB_1)-\Tr(PB_2)\le\Tr(PB_1)\le\Tr B_1,\\
+\Tr D_-&=\Tr((I-P)B_2)-\Tr((I-P)B_1)\le\Tr((I-P)B_2)\le\Tr B_2 .
+\end{align*}
+The sum of the left sides equals the sum of the right sides by hypothesis, so every inequality is an equality. In particular \(\Tr(PB_2P)=0\) and \(\Tr((I-P)B_1(I-P))=0\). A positive semidefinite matrix with trace~\(0\) is~\(0\), so \(PB_2P=0\). Hence \((B_2^{1/2}P)^\dagger(B_2^{1/2}P)=0\), so \(B_2P=0=PB_2\). In the same way \(B_1=PB_1P\). Therefore \(D_+=PDP=PB_1P-PB_2P=B_1\) and \(B_2=B_1-D=D_-\).
+\end{proof}
+
+So the literal meaning of the printed formula is \(\abs{\varphi-\psi}(A)=\Tr(\abs{\rho-\sigma}A)\), and Ozawa's inequality reads
+\begin{equation}\label{eq:L}\tag{L}
+\Tr\bigl(\abs{\rho-\sigma}A\bigr)\le\Bigl(8\,\delta(\rho,\sigma)\,\Tr\bigl((\rho+\sigma)A^2\bigr)\Bigr)^{1/2}\quad\text{for every }A\ge0 .
+\end{equation}
+We call the two sides \(\LHS\) and \(\RHS\). For \(A\ge0\), \(\LHS=\Tr(A^{1/2}\abs{D}A^{1/2})\ge0\). The right side is real when \(\delta\ge0\). This always holds, by concavity of \(H\), but we never need the general fact: below, \(\delta\) is computed explicitly and is positive, or is assumed to be at least \(1/4\), or the inequality is used in squared form. So, when \(\delta\ge0\), \eqref{eq:L} fails for \((\rho,\sigma,A)\) exactly when
+\begin{equation}\label{eq:Lsq}
+\Tr\bigl(\abs{\rho-\sigma}A\bigr)^2>8\,\delta(\rho,\sigma)\,\Tr\bigl((\rho+\sigma)A^2\bigr).
+\end{equation}
+
+\begin{remark}\label{rem:base}
+Changing the base of the logarithm multiplies \(\delta\) by a positive constant, so it amounts to changing the constant~\(8\). Theorem~\ref{thm:noconst} shows that no constant works. The explicit examples of Theorem~\ref{thm:witness} are checked in both natural logarithm and base~\(2\).
+\end{remark}
+
+\section{Three lemmas}\label{sec:lemmas}
+
+\begin{lemma}\label{lem:abs}
+Let \(D\in M_d\) be hermitian and \(s\ge0\). If \(D^2=s^2I\), then \(\abs{D}=sI\).
+\end{lemma}
+
+\begin{proof}
+In the spectral decomposition \(D=\sum_j\lambda_jP_j\) we have \(D^2P_j=\lambda_j^2P_j=s^2P_j\). Since \(P_j\ne0\), \(\abs{\lambda_j}=s\) for every \(j\). Hence \(\abs{D}=s\sum_jP_j=sI\).
+\end{proof}
+
+\begin{lemma}\label{lem:entropy}
+\textup{(a)} A rank-one orthogonal projection \(P\in M_d\) is a density matrix with \(H(P)=0\). \textup{(b)} If \(P\in M_2\) is a rank-one orthogonal projection and \(0\le x\le1\), then \(\tau=(1-x)(I-P)+xP\) is a density matrix with eigenvalues \(x\) and \(1-x\), and \(H(\tau)=h(x)\).
+\end{lemma}
+
+\begin{proof}
+(a) The eigenvalues of \(P\) are \(1\) once and \(0\) otherwise, and \(\eta(1)=\eta(0)=0\). (b) In \(M_2\) the projection \(I-P\) also has rank one. For unit vectors \(f\) in the range of \(P\) and \(f'\) in the range of \(I-P\), which are orthogonal, \(\tau f=xf\) and \(\tau f'=(1-x)f'\). So \(H(\tau)=\eta(x)+\eta(1-x)=h(x)\).
+\end{proof}
+
+\begin{lemma}\label{lem:scalar}
+\begin{enumerate}\renewcommand{\theenumi}{\alph{enumi}}
+\item \(e^s\ge1+s\) for real \(s\), with equality only at \(s=0\). Hence \(\ln t\le t-1\) for \(t>0\), and \(\ln(1+w)<w\) for \(w>0\).
+\item \(e>2\), hence \(\ln2<1\).
+\item \(\ln2>2/3\).
+\item \(\ln y\le2\sqrt{y}-2\) for \(y>0\).
+\item For \(0<x<1\): \(h(x)>0\) and \(h(x)<x(1+\ln(1/x))\). The function \(h\) is continuous and strictly increasing on \((0,1/2]\), \(h(1/2)=\ln2\), and \(h(x)\to0\) as \(x\to0^+\). So \(h\) maps \((0,1/2]\) bijectively onto \((0,\ln2]\).
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) \(g(s)=e^s-1-s\) has \(g(0)=0\) and \(g'(s)=e^s-1\), which is negative for \(s<0\) and positive for \(s>0\); so \(g(s)>0\) for \(s\ne0\). Taking \(s=\ln t\) gives \(t\ge1+\ln t\), with equality only at \(t=1\). Taking \(t=1+w\) with \(w>0\) gives \(\ln(1+w)<w\).
+(b) \(e=\sum_{k\ge0}1/k!>2\).
+(c) For \(t>0\), \(\frac1t-\bigl(\frac23-\frac49(t-\frac32)\bigr)=\frac{(2t-3)^2}{9t}\ge0\), with equality only at \(t=3/2\). Integrating over \([1,2]\), where \(\int_1^2(t-\frac32)\,\dd t=0\), gives \(\ln2>\frac23\).
+(d) Apply (a) with \(t=\sqrt y\).
+(e) Both terms of \(h(x)\) are positive. By (a) with \(w=x/(1-x)\), \((1-x)\ln\frac{1}{1-x}<x\), so \(h(x)<x\ln(1/x)+x\). By (d), \(x\ln(1/x)<2\sqrt{x}\), so \(h(x)\to0\). Finally \(h'(x)=\ln\frac{1-x}{x}>0\) on \((0,1/2)\), and the intermediate value theorem gives the bijection.
+\end{proof}
+
+\section{A family of pure qubit states}\label{sec:family}
+
+For real \(m>0\) put \(N=m^2\) and
+\begin{gather*}
+\rho=\begin{pmatrix}1&0\\0&0\end{pmatrix},\qquad
+\sigma_m=vv^{T},\quad v=\Bigl(\frac{N-1}{N+1},\frac{2m}{N+1}\Bigr),\\
+A_m=\frac{1}{N+1}\begin{pmatrix}1&-m\\-m&N\end{pmatrix}=\frac{uu^{T}}{N+1},\quad u=(1,-m).
+\end{gather*}
+Write \(D_m=\rho-\sigma_m\) and \(S_m=\rho+\sigma_m\). If \(\theta\in(0,\pi)\) satisfies \(\cos\theta=(N-1)/(N+1)\) and \(\sin\theta=2m/(N+1)\), that is \(m=\cot(\theta/2)\), then \(\sigma_m\) is the projection onto \((\cos\theta,\sin\theta)\) and \(1/(N+1)=\sin^2(\theta/2)\). For integer \(m\) all entries are rational. For \(m=5\) one gets \(v=(12/13,5/13)\) and the matrices of the Main Theorem. For \(m=7\),
+\[
+\sigma_7=\frac{1}{625}\begin{pmatrix}576&168\\168&49\end{pmatrix},\quad v=\Bigl(\frac{24}{25},\frac{7}{25}\Bigr),\qquad A_7=\frac{1}{50}\begin{pmatrix}1&-7\\-7&49\end{pmatrix}.
+\]
+
+The next lemma writes everything in one orthonormal basis.
+
+\begin{lemma}\label{lem:family}
+Let \(m>0\), \(N=m^2\), \(e_1=(1,0)\), \(u=(1,-m)\), \(u'=(m,1)\), \(f_1=u'/\sqrt{N+1}\), \(f_2=u/\sqrt{N+1}\), \(A'=f_1f_1^{T}\) and \(E=f_1f_2^{T}+f_2f_1^{T}\).
+\begin{enumerate}
+\item \((f_1,f_2)\) is an orthonormal basis. \(A_m=f_2f_2^{T}\) and \(A'\) are rank-one orthogonal projections with \(A_m+A'=I\) and \(A_mA'=A'A_m=0\).
+\item \(e_1=(mf_1+f_2)/\sqrt{N+1}\) and \(v=(mf_1-f_2)/\sqrt{N+1}\). So \(v\) is a unit vector, and \(\rho=e_1e_1^{T}\) and \(\sigma_m=vv^{T}\) are rank-one orthogonal projections.
+\item \(D_m=\frac{2m}{N+1}E\) and \(S_m=\frac{2N}{N+1}A'+\frac{2}{N+1}A_m\).
+\item \(E^2=I\), hence \(D_m^2=\bigl(\frac{2m}{N+1}\bigr)^2I\).
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+1. \(\langle u,u'\rangle=0\) and \(\abs{u}^2=\abs{u'}^2=N+1\). For a real unit vector \(f\), \(ff^{T}\) is a rank-one orthogonal projection with trace~\(1\), and \(f_2f_2^{T}=uu^{T}/(N+1)=A_m\). The sum \(f_1f_1^{T}+f_2f_2^{T}\) fixes \(f_1\) and \(f_2\), so it is \(I\), and \(f_2f_2^{T}f_1f_1^{T}=f_2(f_2^{T}f_1)f_1^{T}=0\).
+2. \(mu'+u=(N+1)e_1\) and \(mu'-u=(N-1,2m)=(N+1)v\).
+3. By 2, \(\rho=\frac{1}{N+1}(m^2f_1f_1^{T}+mE+f_2f_2^{T})\), and \(\sigma_m\) is the same with \(-E\) in place of \(E\). Subtract and add.
+4. \(E^2=f_1(f_2^{T}f_2)f_1^{T}+f_2(f_1^{T}f_1)f_2^{T}=I\), since the cross terms vanish.
+\end{proof}
+
+\begin{proposition}\label{prop:closed}
+For every real \(m>0\), the matrices \(\rho,\sigma_m\) are density matrices of pure states, \(A_m\) is a rank-one orthogonal projection, \(\abs{D_m}=\frac{2m}{N+1}I\), and
+\[
+\Tr(\abs{D_m}A_m)=\frac{2m}{N+1},\qquad \Tr(S_mA_m^2)=\frac{2}{N+1},\qquad \delta(\rho,\sigma_m)=h\Bigl(\frac{1}{N+1}\Bigr).
+\]
+With \(x=1/(N+1)\),
+\begin{equation}\label{eq:closed}
+\frac{\Tr(\abs{D_m}A_m)^2}{8\,\delta(\rho,\sigma_m)\,\Tr(S_mA_m^2)}=\frac{1-x}{4h(x)},
+\end{equation}
+and \((N+1)h(x)=(N+1)\ln(N+1)-N\ln N\).
+\end{proposition}
+
+\begin{proof}
+Lemma~\ref{lem:family} diagonalises everything; Lemmas~\ref{lem:abs} and~\ref{lem:entropy} then give the absolute value and the entropies. Let \(s=2m/(N+1)\). By Lemma~\ref{lem:family}(2) and Lemma~\ref{lem:entropy}(a), \(\rho\) and \(\sigma_m\) are pure states with \(H(\rho)=H(\sigma_m)=0\). By Lemma~\ref{lem:family}(4) and Lemma~\ref{lem:abs}, \(\abs{D_m}=sI\), so \(\Tr(\abs{D_m}A_m)=s\Tr A_m=s\). By Lemma~\ref{lem:family}(1) and~(3), \(S_mA_m=2xA_m\), so \(\Tr(S_mA_m^2)=2x\). Also \(\omega=\frac12S_m=(1-x)(I-A_m)+xA_m\), so \(\delta(\rho,\sigma_m)=H(\omega)=h(x)\) by Lemma~\ref{lem:entropy}(b). Since \(s^2=4Nx^2\) and \(Nx=1-x\), the quotient is \(4Nx^2/(16xh(x))=(1-x)/(4h(x))\). Finally \((N+1)h(x)=\ln(N+1)+N\ln\frac{N+1}{N}=(N+1)\ln(N+1)-N\ln N\).
+\end{proof}
+
+For \(m=1\) the states commute (\(\sigma_1=\diag(0,1)\)), and the quotient is \(1/(8\ln2)<1\), as Proposition~\ref{prop:commuting} requires.
+
+\section{Explicit counterexamples}\label{sec:witness}
+
+By Proposition~\ref{prop:closed}, for \(m=5\) we have \(x=1/26\), \(\LHS=5/13\) and \(\Tr(S_5A_5^2)=1/13\), so \eqref{eq:Lsq} holds if and only if \(\delta<25/104\). For \(m=7\) we have \(x=1/50\), \(\LHS=7/25\) and \(\Tr(S_7A_7^2)=1/25\), so \eqref{eq:Lsq} holds if and only if \(\delta<49/200\). The next lemma proves the four resulting scalar inequalities. Each uses \(h(1/n)<(1+\ln n)/n\), which is Lemma~\ref{lem:scalar}(e) at \(x=1/n\), and a power of~\(2\) just above~\(n\).
+
+\begin{lemma}\label{lem:four}
+\(h(1/26)<25/104\), \(h(1/26)/\ln2<25/104\), \(h(1/50)<49/200\) and \(h(1/50)/\ln2<49/200\).
+\end{lemma}
+
+\begin{proof}
+\emph{First.} \(h(1/26)=\frac{1}{26}\ln26+\frac{25}{26}\ln\frac{26}{25}<\frac{1+\ln26}{26}\) by Lemma~\ref{lem:scalar}(a), and \(\frac{1+\ln26}{26}<\frac{25}{104}\) if and only if \(\ln26<\frac{21}{4}\). This holds because \(26<2^5\), so \(\ln26<5\ln2<5\) by Lemma~\ref{lem:scalar}(b).
+
+\emph{Third.} \(50<2^6\), so \(\ln50<6\ln2<6\), and \(h(1/50)<\frac{7}{50}=\frac{28}{200}<\frac{49}{200}\).
+
+\emph{Fourth.} By Lemma~\ref{lem:scalar}(c), \(1/\ln2<3/2\). So \(\frac{h(1/50)}{\ln2}<\frac{1}{50}\bigl(\frac{1}{\ln2}+\frac{\ln50}{\ln2}\bigr)<\frac{1}{50}\bigl(\frac32+6\bigr)=\frac{30}{200}<\frac{49}{200}\).
+
+\emph{Second.} \(26=2^5\cdot\frac{13}{16}\) and \(\ln\frac{13}{16}\le-\frac{3}{16}\) by Lemma~\ref{lem:scalar}(a), so \(\ln26\le5\ln2-\frac{3}{16}\). Hence
+\begin{align*}
+\frac{h(1/26)}{\ln2}&<\frac{1}{26}\Bigl(\frac{1}{\ln2}+\frac{\ln26}{\ln2}\Bigr)\le\frac{1}{26}\Bigl(5+\frac{13}{16}\cdot\frac{1}{\ln2}\Bigr)\\
+&<\frac{1}{26}\Bigl(5+\frac{13}{16}\cdot\frac32\Bigr)=\frac{199}{832}<\frac{200}{832}=\frac{25}{104}. \qedhere
+\end{align*}
+\end{proof}
+
+\begin{theorem}\label{thm:witness}
+For \(m=5\) and \(m=7\), the matrices \(\rho\) and \(\sigma_m\) are density matrices of pure states on \(M_2(\C)\), \(A_m\ge0\), and \eqref{eq:L} fails strictly for \((\rho,\sigma_m,A_m)\), with the natural logarithm and with base~\(2\). Exactly:
+\begin{itemize}
+\item \(m=5\): \(\LHS=\frac{5}{13}\), \(\Tr(S_5A_5^2)=\frac{1}{13}\), \(\delta=h(\frac{1}{26})\), and \(\frac{8}{13}h(\frac{1}{26})<(\frac{5}{13})^2\) and \(\frac{8}{13}\cdot\frac{h(1/26)}{\ln2}<(\frac{5}{13})^2\);
+\item \(m=7\): \(\LHS=\frac{7}{25}\), \(\Tr(S_7A_7^2)=\frac{1}{25}\), \(\delta=h(\frac{1}{50})\), and \(\frac{8}{25}h(\frac{1}{50})<(\frac{7}{25})^2\) and \(\frac{8}{25}\cdot\frac{h(1/50)}{\ln2}<(\frac{7}{25})^2\).
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+The values are Proposition~\ref{prop:closed} at \(N=25\) and \(N=49\); in particular \(A_m\ge0\), because it is an orthogonal projection. The inequalities are Lemma~\ref{lem:four}, multiplied by \(8/13\) and \(8/25\). Since \(\delta>0\) by Lemma~\ref{lem:scalar}(e) and \(\Tr(S_mA_m^2)>0\), the right side of \eqref{eq:L} is a positive real number, and \eqref{eq:Lsq} gives \(\LHS>\RHS\).
+\end{proof}
+
+The Main Theorem is the case \(m=5\).
+
+\begin{remark}\label{rem:direct}
+The case \(m=5\) can also be checked entry by entry, without Lemma~\ref{lem:family}. Here \(D=\rho-\sigma_5=\frac{1}{169}\begin{pmatrix}25&-60\\-60&-25\end{pmatrix}\) and \(D^2=\frac{25^2+60^2}{169^2}I=\frac{25}{169}I\), so \(\abs{D}=\frac{5}{13}I\) by Lemma~\ref{lem:abs}. With \(u=(1,-5)\) and \(u'=(5,1)\), \(S=\frac{1}{169}\begin{pmatrix}313&60\\60&25\end{pmatrix}\) satisfies \(Su=\frac{1}{13}u\) and \(Su'=\frac{25}{13}u'\). So \(\Tr(SA_5^2)=\frac{1}{13}\) and \(\omega=\frac{25}{26}(I-A_5)+\frac{1}{26}A_5\). For \(m=7\): \(D^2=\frac{49^2+168^2}{625^2}I=\frac{49}{625}I\), \(Su=\frac{1}{25}u\) and \(Su'=\frac{49}{25}u'\) with \(u'=(7,1)\).
+\end{remark}
+
+\begin{remark}\label{rem:threshold}
+By \eqref{eq:closed} the squared quotient is \((1-x)/(4h(x))\), which is strictly decreasing in \(x\in(0,1/2]\) by Lemma~\ref{lem:scalar}(e), hence strictly increasing in \(m\ge1\). The computations of Section~\ref{sec:computer} decide its position relative to~\(1\) at \(m=3,4\) (natural logarithm) and \(m=4,5\) (base~\(2\)). So the family violates \eqref{eq:L} exactly for \(m>m_\ast\), with \(m_\ast\in(3,4)\) for the natural logarithm and \(m_\ast\in(4,5)\) for base~\(2\). The first violating integer is \(m=4\) (natural logarithm) and \(m=5\) (base~\(2\)). This remark rests on the computer verification and is not used elsewhere.
+\end{remark}
+
+\section{The failure is robust}\label{sec:robust}
+
+\begin{theorem}\label{thm:noconst}
+For every real \(m\ge1\),
+\[
+\Tr(\abs{D_m}A_m)^2>\frac{m}{\sqrt2}\,\delta(\rho,\sigma_m)\,\Tr(S_mA_m^2).
+\]
+So for every \(C>0\), the inequality \eqref{eq:L} with \(C\) in place of \(8\) fails for \((\rho,\sigma_m,A_m)\) whenever \(m\ge\max(1,\sqrt2\,C)\), and \(\LHS/\RHS>(m/(8\sqrt2))^{1/2}\to\infty\). With the logarithm to a base \(b>1\), the same holds for \(m\ge\max(1,\sqrt2\,C/\ln b)\).
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{prop:closed} gives the quotient exactly; we bound the entropy from above. Let \(x=1/(N+1)\). By Proposition~\ref{prop:closed},
+\[
+\frac{\Tr(\abs{D_m}A_m)^2}{\delta\,\Tr(S_mA_m^2)}=\frac{2N}{(N+1)h(x)} .
+\]
+By Lemma~\ref{lem:scalar}(e), \((N+1)h(x)<1+\ln(N+1)\). By Lemma~\ref{lem:scalar}(d), \(1+\ln(N+1)<2\sqrt{N+1}\). Since \(N\ge1\), \(N+1\le2N\). Hence the quotient exceeds \(N/\sqrt{N+1}\ge N/\sqrt{2N}=m/\sqrt2\). The statements about \(C\) and \(b\) follow, since \(\delta_b=\delta/\ln b\).
+\end{proof}
+
+For \(C=8\) this guarantees a violation from \(m=12\) on, since \(11^2<128\le12^2\). This is consistent with the first violation at \(m=4\) found in Remark~\ref{rem:threshold}.
+
+\begin{theorem}\label{thm:nofunction}
+For every real \(m>0\), the matrix \(B_m=S_m^{-1}\) exists, is positive definite, and
+\[
+\Tr(\abs{D_m}B_m)^2=2\,\Tr(S_mB_m^2).
+\]
+Moreover \(\{\delta(\rho,\sigma_m)\mid m\ge1\}=(0,\ln2]\). Consequently, if \(F\colon(0,\ln2]\to\R\) satisfies \(F(t_0)<2\) for some \(t_0\), then the inequality \(\abs{\varphi-\psi}(A)^2\le F(\delta(\varphi,\psi))\,(\varphi+\psi)(A^2)\) fails for some pure states on \(M_2(\C)\) with \(\delta(\varphi,\psi)=t_0\) and some \(A>0\). This covers \(F(t)=Ct^\alpha\) for all \(C,\alpha>0\), and \(F(t)=8t\) at every \(t_0<1/4\).
+\end{theorem}
+
+\begin{proof}
+We keep the family and change the test matrix to \(S_m^{-1}\). By Lemma~\ref{lem:family}(3), \(B_m=\frac{N+1}{2N}A'+\frac{N+1}{2}A_m\) satisfies \(S_mB_m=I\). Its eigenvalues are positive, and \(\Tr B_m=\frac{(N+1)^2}{2N}\). By Proposition~\ref{prop:closed}, \(\abs{D_m}=sI\) with \(s=2m/(N+1)\), and \(S_mB_m^2=B_m\). So
+\[
+\frac{\Tr(\abs{D_m}B_m)^2}{\Tr(S_mB_m^2)}=s^2\Tr B_m=\frac{4N}{(N+1)^2}\cdot\frac{(N+1)^2}{2N}=2 .
+\]
+By Proposition~\ref{prop:closed}, \(\delta(\rho,\sigma_m)=h(1/(m^2+1))\). The map \(m\mapsto1/(m^2+1)\) sends \([1,\infty)\) onto \((0,1/2]\), so Lemma~\ref{lem:scalar}(e) gives the range \((0,\ln2]\). For the consequence, choose \(m\ge1\) with \(\delta(\rho,\sigma_m)=t_0\); then \(\Tr(\abs{D_m}B_m)^2=2\Tr(S_mB_m^2)>F(t_0)\Tr(S_mB_m^2)\), since \(\Tr(S_mB_m^2)>0\). For \(F(t)=Ct^\alpha\) take \(t_0\le\min(\ln2,C^{-1/\alpha})\). For \(F(t)=8t\) note \(1/4<2/3<\ln2\) by Lemma~\ref{lem:scalar}(c).
+\end{proof}
+
+The number \(2\) in Theorem~\ref{thm:nofunction} is optimal, by the next proposition. Its proof writes \(\abs{D}=UD\) with a hermitian unitary \(U\) and applies the Cauchy--Schwarz inequality to each state separately.
+
+\begin{proposition}\label{prop:two}
+For all \(d\ge1\), all density matrices \(\rho,\sigma\in M_d\) and all hermitian \(A\in M_d\),
+\begin{gather*}
+\bigl\lvert\Tr(\abs{\rho-\sigma}A)\bigr\rvert\le\sqrt{\Tr(\rho A^2)}+\sqrt{\Tr(\sigma A^2)},\\
+\text{hence}\quad \Tr(\abs{\rho-\sigma}A)^2\le2\,\Tr\bigl((\rho+\sigma)A^2\bigr).
+\end{gather*}
+\end{proposition}
+
+\begin{proof}
+Let \(D=\rho-\sigma=\sum_j\lambda_jP_j\), \(P=\sum_{\lambda_j\ge0}P_j\) and \(U=2P-I\). Then \(U\) is hermitian, \(U^2=I\) and \(UD=\abs{D}\), so \(\Tr(\abs{D}A)=\Tr(U\rho A)-\Tr(U\sigma A)\). For a density matrix \(\tau\), the Cauchy--Schwarz inequality for the inner product \(\langle X,Y\rangle=\Tr(X^\dagger Y)\) gives
+\[
+\abs{\Tr(U\tau A)}=\abs{\langle\tau^{1/2}U,\tau^{1/2}A\rangle}\le\Tr(U\tau U)^{1/2}\,\Tr(A\tau A)^{1/2}=\Tr(\tau A^2)^{1/2},
+\]
+since \(\Tr(U\tau U)=\Tr(\tau U^2)=1\). Apply this to \(\tau=\rho\) and \(\tau=\sigma\), and use \((a+b)^2\le2(a^2+b^2)\).
+\end{proof}
+
+\begin{corollary}\label{cor:threshold}
+\textup{(i)} \eqref{eq:L} holds for every pair of states with \(\delta(\rho,\sigma)\ge1/4\), in every dimension. \textup{(ii)} For every \(t\in(0,1/4)\) there are pure states on \(M_2(\C)\) with \(\delta=t\), and a matrix \(A>0\), for which \eqref{eq:L} fails. Both statements also hold in base~\(2\).
+\end{corollary}
+
+\begin{proof}
+(i) For \(A\ge0\), Proposition~\ref{prop:two} gives \(\LHS^2\le2\Tr(SA^2)\le8\delta\Tr(SA^2)\). Both sides of \eqref{eq:L} are nonnegative, so taking square roots gives \eqref{eq:L}. (ii) By Theorem~\ref{thm:nofunction} choose \(m\ge1\) with \(\delta(\rho,\sigma_m)=t\); then \(\Tr(\abs{D_m}B_m)^2=2\Tr(S_mB_m^2)>8t\Tr(S_mB_m^2)\). In base~\(2\), the values of \(\delta_2=\delta/\ln2\) on the family fill \((0,1]\), and the same arguments apply.
+\end{proof}
+
+\begin{corollary}\label{cor:variants}
+\textup{(a)} Let \(\varepsilon=1/1000\), \(\rho_\varepsilon=(1-\varepsilon)\rho+\frac{\varepsilon}{2}I\) and \(\sigma_\varepsilon=(1-\varepsilon)\sigma_7+\frac{\varepsilon}{2}I\). These are faithful states, and \eqref{eq:L} fails strictly for \((\rho_\varepsilon,\sigma_\varepsilon,A_7)\), in natural logarithm and in base~\(2\). \textup{(b)} For every \(d\ge2\) there are states on \(M_d(\C)\) and \(A\ge0\) for which \eqref{eq:L} fails.
+\end{corollary}
+
+\begin{proof}
+(a) Let \(x=1/50\) and \(A=A_7\). For a rank-one projection \(P\in M_2\), \((1-\varepsilon)P+\frac{\varepsilon}{2}I=(1-\frac{\varepsilon}{2})P+\frac{\varepsilon}{2}(I-P)\) has eigenvalues \(\frac{1999}{2000}\) and \(\frac{1}{2000}\) and entropy \(h(\frac{1}{2000})\) (Lemma~\ref{lem:entropy}(b)). Next, \(\rho_\varepsilon-\sigma_\varepsilon=(1-\varepsilon)D_7\), so \(\abs{\rho_\varepsilon-\sigma_\varepsilon}=\frac{6993}{25000}I\) by Lemmas~\ref{lem:family}(4) and~\ref{lem:abs}, and \(\LHS=\frac{6993}{25000}\). Also \((\rho_\varepsilon+\sigma_\varepsilon)A=\bigl(\frac{999}{1000}\cdot\frac{1}{25}+\frac{1}{1000}\bigr)A=\frac{128}{3125}A\). The midpoint is \((1-y)(I-A)+yA\) with \(y=(1-\varepsilon)x+\frac{\varepsilon}{2}=\frac{64}{3125}\), so \(\delta_\varepsilon=h(\frac{64}{3125})-h(\frac{1}{2000})\), which lies in \((0,h(y))\) because \(h\) is strictly increasing on \((0,1/2]\) and \(\frac{1}{2000}<y\). Violation is equivalent to \(\delta_\varepsilon<\frac{48902049}{204800000}\). Since \(1/y=\frac{3125}{64}<2^6\), Lemma~\ref{lem:scalar}(e),(b),(c) give \(\delta_\varepsilon<7y=\frac{29360128}{204800000}\) and \(\delta_\varepsilon/\ln2<y(\frac32+6)=\frac{31457280}{204800000}\), both smaller than \(\frac{48902049}{204800000}\).
+
+(b) Embed the triple of Theorem~\ref{thm:witness} for \(m=5\) block-diagonally as \(\rho\oplus0\), \(\sigma_5\oplus0\), \(A_5\oplus0\) in \(M_d\). Eigenvalues gain only zeros, so \(\delta\) is unchanged, and \(\abs{(\rho\oplus0)-(\sigma_5\oplus0)}=\abs{\rho-\sigma_5}\oplus0\). Both sides of \eqref{eq:L} are unchanged.
+\end{proof}
+
+\section{Commuting states}\label{sec:commuting}
+
+Put \(f(t)=t\ln t\) for \(t>0\) and \(f(0)=0\), so that \(H(\tau)=-\sum_jf(\lambda_j)\). The next lemma is a second-order Taylor bound for \(f\) at the midpoint, using \(f''(t)=1/t\), followed by the harmonic--arithmetic mean inequality.
+
+\begin{lemma}\label{lem:twopoint}
+For \(p,q\ge0\) with \(p+q>0\) and \(a=(p+q)/2\),
+\[
+\frac{f(p)+f(q)}{2}-f(a)\ge\frac{(p-q)^2}{8(p+q)} .
+\]
+\end{lemma}
+
+\begin{proof}
+First, for \(a>0\) and \(c\ge0\),
+\begin{equation}\label{eq:taylor}
+f(c)-f(a)-f'(a)(c-a)\ge\frac{(c-a)^2}{2(a+c)} .
+\end{equation}
+If \(c>0\), the left side equals \(\int_a^c(c-t)\,\frac{\dd t}{t}\) by Taylor's formula with integral remainder. For \(t\) between \(a\) and \(c\) we have \(0<t\le a+c\), so \(1/t\ge1/(a+c)\), and the integral is at least \(\frac{(c-a)^2}{2(a+c)}\) in both cases \(c\ge a\) and \(c<a\). If \(c=0\), the left side is \(a\) and the right side is \(a/2\). Apply \eqref{eq:taylor} with \(c=p\) and \(c=q\) and average. The linear terms cancel and \((p-a)^2=(q-a)^2=(p-q)^2/4\), so the left side of the lemma is at least \(\frac{(p-q)^2}{16}\bigl(\frac{1}{a+p}+\frac{1}{a+q}\bigr)\ge\frac{(p-q)^2}{16}\cdot\frac{4}{2a+p+q}=\frac{(p-q)^2}{8(p+q)}\).
+\end{proof}
+
+Lemma~\ref{lem:twopoint} is the argument of display~(17) in \cite{ozawa20}, specialised to two points with weights \(1/2\). The specialisation is ours.
+
+\begin{proposition}\label{prop:commuting}
+If \(\rho\sigma=\sigma\rho\), then for every hermitian \(A\), with the natural logarithm,
+\[
+\Tr(\abs{\rho-\sigma}A)^2\le8\,\delta(\rho,\sigma)\,\Tr\bigl((\rho+\sigma)A^2\bigr).
+\]
+The same holds in base~\(2\). So \eqref{eq:L} is true for commuting states.
+\end{proposition}
+
+\begin{proof}
+We diagonalise both states at once, apply Lemma~\ref{lem:twopoint} to each pair of eigenvalues, and use the Cauchy--Schwarz inequality. A common unitary conjugation changes none of the three quantities, so we may assume \(\rho=\diag(p_i)\) and \(\sigma=\diag(q_i)\) with probability vectors \(p,q\). Let \(J=\{i\mid p_i+q_i>0\}\). By Lemma~\ref{lem:twopoint},
+\begin{align*}
+\delta(\rho,\sigma)&=\sum_i\Bigl(\frac{f(p_i)+f(q_i)}{2}-f\Bigl(\frac{p_i+q_i}{2}\Bigr)\Bigr)\\
+&\ge\sum_{i\in J}\frac{(p_i-q_i)^2}{8(p_i+q_i)} .
+\end{align*}
+In particular \(\delta\ge0\), so \(\delta_2\ge\delta\) and the base-\(2\) statement follows from the natural one. Now \(\Tr(\abs{\rho-\sigma}A)=\sum_{i\in J}\abs{p_i-q_i}A_{ii}\), and by the Cauchy--Schwarz inequality
+\begin{align*}
+\Bigl(\sum_{i\in J}\abs{p_i-q_i}A_{ii}\Bigr)^2&\le\sum_{i\in J}\frac{(p_i-q_i)^2}{p_i+q_i}\,\sum_{i\in J}(p_i+q_i)A_{ii}^2\\
+&\le8\,\delta(\rho,\sigma)\,\Tr\bigl((\rho+\sigma)A^2\bigr),
+\end{align*}
+because \(A_{ii}^2\le\sum_j\abs{A_{ij}}^2=(A^2)_{ii}\).
+\end{proof}
+
+\begin{remark}\label{rem:breaks}
+For commuting states \(\abs{p_i-q_i}\le p_i+q_i\), which is what makes the weight \(p_i+q_i\) sufficient. For matrices, \(\abs{\rho-\sigma}\le c(\rho+\sigma)\) fails for every constant \(c\): on the family, \(\langle u,\abs{D_m}u\rangle/\langle u,S_mu\rangle=m\) by Lemma~\ref{lem:family} and Proposition~\ref{prop:closed}.
+\end{remark}
+
+\begin{remark}[Which reading was intended]\label{rem:reading}
+The Main Theorem concerns the printed formula with the standard meaning of its symbols. Whether this meaning was intended cannot be settled from the sources, and we make no claim about it. The evidence is circumstantial. The source prints \(\abs{\varphi-\psi}(A)\), with the bars around the functional, not \(\abs{(\varphi-\psi)(A)}\). The commutative argument of \cite{ozawa20} gives exactly the literal inequality with the constant~\(8\) (Proposition~\ref{prop:commuting}). Part~(ii) of the same question is, in the same way, a noncommutative form of displays~(18)--(19) of \cite{ozawa20}. On the other hand, the problem session (2018) predates that paper (2020), the paper does not mention a noncommutative version, and no source states the intended reading. This note does not address the reading \(\abs{(\varphi-\psi)(A)}\) and makes no claim about it.
+\end{remark}
+
+\section{Computer verification}\label{sec:computer}
+
+No proof of a lemma, proposition, theorem or corollary above uses a computation; only Remark~\ref{rem:threshold} does. The two programs below confirm the explicit examples independently, and they are the only source of the decimal values quoted. Both compute, for the family of Section~\ref{sec:family} at \(m=1,\dots,7\) and for both logarithm bases (\(14\) cases), both sides of \eqref{eq:L} from the definitions: exact rational matrices, exact checks that \(\rho,\sigma_m\) are density matrices and \(A_m\ge0\), the absolute value \(\abs{\rho-\sigma_m}\), the eigenvalues of the midpoint, and the entropies. Each program decides the sign of \(\LHS^2-8\,\delta\,\Tr(SA^2)\) only by strict separation from~\(0\); an undecided case would count as a failure. Neither uses \eqref{eq:closed} to decide.
+
+\begin{center}
+\small
+\begin{tabular}{L{0.17\textwidth}L{0.35\textwidth}L{0.35\textwidth}}
+\toprule
+ & Primary certificate & Independent cross-check \\
+\midrule
+Script & \texttt{cert/OZ-1.py} & \texttt{cert/OZ-1\_x.py} \\
+Arithmetic & Arb ball arithmetic at 256 bits through python-flint 0.7.1 \cite{flint}; exact rationals for the matrices & Python standard library only (exact fractions); asserts that no numerical library is loaded and that no floating-point number is used \\
+Absolute value & from the spectral projections, in ball arithmetic & exactly: \((\rho-\sigma)^2=(-\det)I\), so \(\abs{\rho-\sigma}=\sqrt{-\det}\,I\) with a rational root \\
+Logarithms & Arb & own rational enclosures from \(\ln y=2\artanh\frac{y-1}{y+1}\), 60 terms, explicit tail bound \\
+Command & \texttt{python cert/OZ-1.py} & \texttt{python cert/OZ-1\_x.py} \\
+Archived output & \texttt{cert/OZ-1.out} & \texttt{cert/OZ-1\_x.out} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Both archived runs (2026-11-27, Python 3.12.10) end with a PASS line, and all \(14\) verdicts of the two programs agree. The literal inequality is violated for \(m=4,5,6,7\) (natural logarithm) and \(m=5,6,7\) (base~\(2\)), and not violated for \(m=1,2,3\) (natural logarithm) and \(m=1,2,3,4\) (base~\(2\)). The certified values for the two examples of Theorem~\ref{thm:witness} are below. Digits are truncated, not rounded. Each value is a truncation of the ball printed by the primary certificate, and it agrees with the rational interval printed by the cross-check to every decimal that the cross-check prints (\(25\)).
+
+\begin{center}
+\small
+\begin{tabular}{ll}
+\toprule
+Quantity & Certified value \\
+\midrule
+\(m=5\): \(\LHS\), \(\Tr((\rho+\sigma)A^2)\) & \(5/13\), \(1/13\) (exact) \\
+\(m=5\): \(\delta\) (natural log) & \(0.16302362949436594046925930\dots\) \\
+\(m=5\): \((\LHS/\RHS)^2\), natural log & \(1.47453848334865481700577\dots\) \\
+\(m=5\): \(\delta_2\) (base 2) & \(0.23519338181924149141542913\dots\) \\
+\(m=5\): \((\LHS/\RHS)^2\), base 2 & \(1.02207219236025795050724\dots\) \\
+\midrule
+\(m=7\): \(\LHS\), \(\Tr((\rho+\sigma)A^2)\) & \(7/25\), \(1/25\) (exact) \\
+\(m=7\): \(\delta\) (natural log) & \(0.09803911327973198061225941\dots\) \\
+\(m=7\): \((\LHS/\RHS)^2\), natural log & \(2.49900261032501436705753\dots\) \\
+\(m=7\): \(\delta_2\) (base 2) & \(0.14144054254182064515437899\dots\) \\
+\(m=7\): \((\LHS/\RHS)^2\), base 2 & \(1.73217661355872738185832\dots\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+A separate sanity script, \texttt{prover/check\_proof.py}, re-checks the smallest cases of every lemma, the identities of Lemma~\ref{lem:family}, Proposition~\ref{prop:closed} and Theorem~\ref{thm:nofunction} in exact arithmetic for \(17\) rational values of~\(m\), and the rational arithmetic of Lemma~\ref{lem:four} and Corollary~\ref{cor:variants}. It also makes floating-point spot checks of the other results. It is a guard against slips, not a certificate; its archived output ends with ``RESULT: all 42 checks passed.''
+
+\section{Formal verification}\label{sec:lean}
+
+The Lean files are in \texttt{lean/Pipeline/Ozawa/}. They were checked with Lean~4.37.0-rc1 \cite{lean4} and Mathlib at commit \texttt{8ec7bd8e5f837ab7e335374928e18341c4e9f385} \cite{mathlib}. The check requires that the build succeeds, that no proof is left open (no \texttt{sorry} or \texttt{admit}), and that every theorem listed in \texttt{Main.lean} depends only on the three standard axioms \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}. It passed twice on 2026-11-27, in the run that produced the formalization and in an independent rerun.
+
+\subsection{Definitions}
+Every quantity is computed from the matrices through Mathlib's continuous functional calculus. The absolute value of a matrix is Mathlib's \texttt{CFC.abs}, the square root of \(X^\dagger X\). The matrix logarithm is \texttt{cfc Real.log}, and Mathlib's convention \(\log0=0\) gives \(0\log0=0\). The entropy of \(X\) is the real part of \(-\Tr(X\log X)\), with the natural logarithm or with \(\log_2\). The quantity \(\delta\) is defined exactly as in the source. States are \(2\times2\) complex positive semidefinite matrices of trace~\(1\), and \(A\ge0\) means positive semidefinite.
+
+\subsection{What is formalized}
+\begin{itemize}
+\item Theorem~\ref{thm:witness}, for \(m=5\) and \(m=7\), in natural logarithm and in base~\(2\): \texttt{ozawa\_literal\_fails\_m5}, \texttt{ozawa\_literal\_fails\_m5\_bits}, \texttt{ozawa\_literal\_fails\_m7} and \texttt{ozawa\_literal\_fails\_m7\_bits}. Each states that \(\rho,\sigma\) are density matrices, that \(A\ge0\), and that \(\sqrt{8\,\delta\,\re\Tr((\rho+\sigma)A^2)}<\re\Tr(\abs{\rho-\sigma}A)\).
+\item The negative answer as a universally quantified statement: the inequality \eqref{eq:L}, for all \(2\times2\) complex density matrices \(\rho,\sigma\) and all \(A\ge0\), is false. This is \texttt{ozawa\_question\_literal\_false} (natural logarithm), \texttt{ozawa\_question\_literal\_false\_bits} (base~\(2\)) and \texttt{ozawa\_question\_literal\_false\_rpow} (the power \(1/2\) written as a real power).
+\item The ingredients: Lemma~\ref{lem:abs} in any algebra with a continuous functional calculus (\texttt{cfc\_norm\_of\_mul\_self}); Lemma~\ref{lem:entropy}(b) for \(x\ne1/2\) (\texttt{cfc\_twoProj} and supporting lemmas); the absolute values and the values of \(\delta\) for both examples; and the four inequalities of Lemma~\ref{lem:four} (\texttt{ozawa\_m5\_nat}, \texttt{ozawa\_m5\_base2}, \texttt{ozawa\_m7\_nat}, \texttt{ozawa\_m7\_base2}).
+\end{itemize}
+
+\subsection{Deviations from the source}
+The Lean statements take real parts of traces. The source's quantities are real for hermitian arguments, and for the examples the complex traces are proved equal to \(5/13\), \(1/13\), \(7/25\) and \(1/25\). The Lean statements also fix the dimension to~\(2\). This restricts the counterexample, not the question. The constant~\(8\), the condition \(A\ge0\) and the definition of \(\delta\) are those of the source.
+
+\subsection{What is not formalized}
+Lemma~\ref{lem:jordan} (Lean takes the matrix absolute value as the definition of \(\abs{\varphi-\psi}\)); Lemma~\ref{lem:family} and Proposition~\ref{prop:closed} for general \(m\); Theorems~\ref{thm:noconst} and~\ref{thm:nofunction}; Proposition~\ref{prop:two} and Corollaries~\ref{cor:threshold} and~\ref{cor:variants}; Lemma~\ref{lem:twopoint} and Proposition~\ref{prop:commuting}; the family at \(m\ne5,7\) (so Remark~\ref{rem:threshold} rests on the computer verification only); and the decimal values of Section~\ref{sec:computer}.
+
+\section{Summary of verification}\label{sec:summary}
+
+\begin{center}
+\small
+\begin{tabular}{L{0.34\textwidth}L{0.16\textwidth}L{0.16\textwidth}L{0.16\textwidth}}
+\toprule
+Result & By hand & By computer & In Lean \\
+\midrule
+Lemma~\ref{lem:jordan} (absolute value of a functional) & complete & -- & no \\
+Lemmas~\ref{lem:abs}, \ref{lem:entropy} & complete & -- & yes (Lemma~\ref{lem:entropy}: \(x\ne1/2\)) \\
+Proposition~\ref{prop:closed} (closed form) & complete & -- & no \\
+Lemma~\ref{lem:four} (four inequalities) & complete & certified & yes \\
+Theorem~\ref{thm:witness} and the Main Theorem & complete & certified & yes \\
+Remark~\ref{rem:threshold} (first violation) & monotonicity & certified signs & no \\
+Theorems~\ref{thm:noconst}, \ref{thm:nofunction} & complete & -- & no \\
+Proposition~\ref{prop:two}, Corollaries~\ref{cor:threshold}, \ref{cor:variants} & complete & -- & no \\
+Proposition~\ref{prop:commuting} (commuting states) & complete & -- & no \\
+Remark~\ref{rem:reading} (intended reading) & evidence only & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+``Complete'' means that a full written proof is given here; none has yet been independently reviewed.  \textbf{Expert verification required.} Verified so far with Lean 4 + Mathlib (the main theorem, checked twice), two independent exact computer certificates (Arb interval arithmetic and pure rational arithmetic), and AI referees (Claude models; review in progress).
+
+\bibliographystyle{amsplain}
+\begin{thebibliography}{10}
+
+\bibitem{owr18}
+U.~Franz, M.~Junge, G.~Pisier and Q.~Xu (organisers), \emph{Interactions between Operator Space Theory and Quantum Probability with Applications to Quantum Information}, Oberwolfach Rep. \textbf{15} (2018), no.~2, 1293--1379, report 22/2018; Open Problems, pp.~1372--1374, item~(5).
+\url{https://doi.org/10.4171/OWR/2018/22}
+
+\bibitem{ozawa20}
+N.~Ozawa, \emph{An entropic proof of cutoff on Ramanujan graphs}, Electron. Commun. Probab. (2020); arXiv:2009.00837.
+\url{https://arxiv.org/abs/2009.00837}
+
+\bibitem{topsoe00}
+F.~Tops\o{}e, \emph{Some inequalities for information divergence and related measures of discrimination}, IEEE Trans. Inform. Theory \textbf{46} (2000), 1602--1609.
+\url{https://doi.org/10.1109/18.850703}
+
+\bibitem{takesaki79}
+M.~Takesaki, \emph{Theory of Operator Algebras~I}, Springer, New York, 1979.
+\url{https://doi.org/10.1007/978-1-4612-6188-9}
+
+\bibitem{bh09}
+J.~Bri\"et and P.~Harremo\"es, \emph{Properties of classical and quantum Jensen--Shannon divergence}, arXiv:0806.4472.
+\url{https://arxiv.org/abs/0806.4472}
+
+\bibitem{mathdb}
+MathDB, problem 401593 (``Ozawa's entropy--variation inequality''), accessed 2026-11-27.
+\url{https://mathdb.com/p/401593}
+
+\bibitem{omega26}
+The Omega Institute, \emph{trureturing}, pull request 15993 (merged 2026-10-12).
+\url{https://github.com/the-omega-institute/trureturing/pull/15993}
+
+\bibitem{flint}
+python-flint, Python bindings for FLINT and Arb.
+\url{https://github.com/flintlib/python-flint}
+
+\bibitem{lean4}
+The Lean~4 theorem prover and programming language.
+\url{https://github.com/leanprover/lean4}
+
+\bibitem{mathlib}
+The mathlib community, \emph{Mathlib}, the Lean~4 mathematical library.
+\url{https://github.com/leanprover-community/mathlib4}
+
+\end{thebibliography}
+\end{document}

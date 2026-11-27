@@ -1,0 +1,151 @@
+run_cert.sh: fresh clone of /c/Users/<user>/Documents/research-pipeline at commit 0c620bdc478c629d7338ab4281fd9cfefb363667 in C:/Users/<user>/AppData/Local/Temp/claude/3585629b1257959c/81d0dd50-cccb-4297-a7a6-f3708ab70b70/scratchpad/ozcert/clone
+run_cert.sh: invoking: python targets/ozawa-entropy-variation/cert/OZ-1_x.py
+command : python OZ-1_x.py
+cwd     : C:\Users\<user>\AppData\Local\Temp\claude\3585629b1257959c\81d0dd50-cccb-4297-a7a6-f3708ab70b70\scratchpad\ozcert\clone
+date    : 2026-11-27T13:17:17+00:00
+commit  : 0c620bdc478c629d7338ab4281fd9cfefb363667  (script status: ?? targets/ozawa-entropy-variation/cert/OZ-1_x.py)
+script  : sha256 9c06901db65be765aba0aa2c5da9260cee59669fc23d89d60a6f7e8b38461923
+python  : 3.12.10 (Windows-11-10.0.26200-SP0); libraries: standard library only (fractions, math.isqrt)
+
+  ok    ln 2 enclosure has width < 1e-50 and lies in [0.6931, 0.6932]
+  ok    ln self-test: ln(26)+ln(25/26) and ln(25) intersect
+  ok    ln self-test: ln(50)+ln(49) and ln(2450) intersect
+  ok    ln self-test: ln(7/3)+ln(11/5) and ln(77/15) intersect
+
+m = 1  (N = 1)
+  ok    m=1: rho, sigma PSD with trace 1; A PSD (exact)
+  ok    m=1: tr(rho - sigma) = 0 and (rho - sigma)^2 = (-det) I exactly
+  ok    m=1: -det(rho - sigma) = 1 is a rational square, s = 1
+  ok    m=1: |rho-sigma| = s I is PSD and squares to (rho-sigma)^2
+  spec(S/2) = ('1/2', '1/2') ; spec(rho) = ('1', '0') ; spec(sigma) = ('1', '0')
+  LHS = Tr(|rho-sigma| A) = 1 (exact) ; Tr(S A^2) = 1 (exact)
+  base e: delta in [0.6931471805599453094172321, 0.6931471805599453094172321]
+          LHS^2 - RHS^2 in [-4.5451774444795624753378569, -4.5451774444795624753378569]
+          (LHS/RHS)^2  in [0.1803368801111204259199905, 0.1803368801111204259199905]
+  ok    m=1 base e: no violation certified, expected no violation
+  base 2: delta in [0.9999999999999999999999999, 1.0000000000000000000000000]
+          LHS^2 - RHS^2 in [-7.0000000000000000000000000, -6.9999999999999999999999999]
+          (LHS/RHS)^2  in [0.1249999999999999999999999, 0.1250000000000000000000000]
+  ok    m=1 base 2: no violation certified, expected no violation
+
+m = 2  (N = 4)
+  ok    m=2: rho, sigma PSD with trace 1; A PSD (exact)
+  ok    m=2: tr(rho - sigma) = 0 and (rho - sigma)^2 = (-det) I exactly
+  ok    m=2: -det(rho - sigma) = 16/25 is a rational square, s = 4/5
+  ok    m=2: |rho-sigma| = s I is PSD and squares to (rho-sigma)^2
+  spec(S/2) = ('4/5', '1/5') ; spec(rho) = ('1', '0') ; spec(sigma) = ('1', '0')
+  LHS = Tr(|rho-sigma| A) = 4/5 (exact) ; Tr(S A^2) = 2/5 (exact)
+  base e: delta in [0.5004024235381878795331879, 0.5004024235381878795331879]
+          LHS^2 - RHS^2 in [-0.9612877553222012145062014, -0.9612877553222012145062014]
+          (LHS/RHS)^2  in [0.3996783200725987940005263, 0.3996783200725987940005263]
+  ok    m=2 base e: no violation certified, expected no violation
+  base 2: delta in [0.7219280948873623478703194, 0.7219280948873623478703194]
+          LHS^2 - RHS^2 in [-1.6701699036395595131850221, -1.6701699036395595131850221]
+          (LHS/RHS)^2  in [0.2770359006892572499332766, 0.2770359006892572499332766]
+  ok    m=2 base 2: no violation certified, expected no violation
+
+m = 3  (N = 9)
+  ok    m=3: rho, sigma PSD with trace 1; A PSD (exact)
+  ok    m=3: tr(rho - sigma) = 0 and (rho - sigma)^2 = (-det) I exactly
+  ok    m=3: -det(rho - sigma) = 9/25 is a rational square, s = 3/5
+  ok    m=3: |rho-sigma| = s I is PSD and squares to (rho-sigma)^2
+  spec(S/2) = ('9/10', '1/10') ; spec(rho) = ('1', '0') ; spec(sigma) = ('1', '0')
+  LHS = Tr(|rho-sigma| A) = 3/5 (exact) ; Tr(S A^2) = 1/5 (exact)
+  base e: delta in [0.3250829733914482395065500, 0.3250829733914482395065500]
+          LHS^2 - RHS^2 in [-0.1601327574263171832104800, -0.1601327574263171832104800]
+          (LHS/RHS)^2  in [0.6921309893676484332635512, 0.6921309893676484332635512]
+  ok    m=3 base e: no violation certified, expected no violation
+  base 2: delta in [0.4689955935892812212535893, 0.4689955935892812212535893]
+          LHS^2 - RHS^2 in [-0.3903929497428499540057429, -0.3903929497428499540057429]
+          (LHS/RHS)^2  in [0.4797486438583509957467716, 0.4797486438583509957467716]
+  ok    m=3 base 2: no violation certified, expected no violation
+
+m = 4  (N = 16)
+  ok    m=4: rho, sigma PSD with trace 1; A PSD (exact)
+  ok    m=4: tr(rho - sigma) = 0 and (rho - sigma)^2 = (-det) I exactly
+  ok    m=4: -det(rho - sigma) = 64/289 is a rational square, s = 8/17
+  ok    m=4: |rho-sigma| = s I is PSD and squares to (rho-sigma)^2
+  spec(S/2) = ('16/17', '1/17') ; spec(rho) = ('1', '0') ; spec(sigma) = ('1', '0')
+  LHS = Tr(|rho-sigma| A) = 8/17 (exact) ; Tr(S A^2) = 2/17 (exact)
+  base e: delta in [0.2237180760658337389140725, 0.2237180760658337389140725]
+          LHS^2 - RHS^2 in [0.0108950979588000796379663, 0.0108950979588000796379663]
+          (LHS/RHS)^2  in [1.0517438813384868884752100, 1.0517438813384868884752100]
+  ok    m=4 base e: violation certified, expected violation
+  base 2: delta in [0.3227569588973982317834777, 0.3227569588973982317834777]
+          LHS^2 - RHS^2 in [-0.0823179682356135607097091, -0.0823179682356135607097091]
+          (LHS/RHS)^2  in [0.7290133060209458652773260, 0.7290133060209458652773260]
+  ok    m=4 base 2: no violation certified, expected no violation
+
+m = 5  (N = 25)
+  ok    m=5: literal matrices (as typed in CERT.md) equal the family formula
+  ok    m=5: rho, sigma PSD with trace 1; A PSD (exact)
+  ok    m=5: tr(rho - sigma) = 0 and (rho - sigma)^2 = (-det) I exactly
+  ok    m=5: -det(rho - sigma) = 25/169 is a rational square, s = 5/13
+  ok    m=5: |rho-sigma| = s I is PSD and squares to (rho-sigma)^2
+  spec(S/2) = ('25/26', '1/26') ; spec(rho) = ('1', '0') ; spec(sigma) = ('1', '0')
+  LHS = Tr(|rho-sigma| A) = 5/13 (exact) ; Tr(S A^2) = 1/13 (exact)
+  base e: delta in [0.1630236294943659404692593, 0.1630236294943659404692593]
+          LHS^2 - RHS^2 in [0.0476067605478458117822309, 0.0476067605478458117822309]
+          (LHS/RHS)^2  in [1.4745384833486548170057705, 1.4745384833486548170057705]
+  ok    m=5 base e: violation certified, expected violation
+  base 2: delta in [0.2351933818192414914154291, 0.2351933818192414914154291]
+          LHS^2 - RHS^2 in [0.0031946052709993188922802, 0.0031946052709993188922802]
+          (LHS/RHS)^2  in [1.0220721923602579505072445, 1.0220721923602579505072445]
+  ok    m=5 base 2: violation certified, expected violation
+
+m = 6  (N = 36)
+  ok    m=6: rho, sigma PSD with trace 1; A PSD (exact)
+  ok    m=6: tr(rho - sigma) = 0 and (rho - sigma)^2 = (-det) I exactly
+  ok    m=6: -det(rho - sigma) = 144/1369 is a rational square, s = 12/37
+  ok    m=6: |rho-sigma| = s I is PSD and squares to (rho-sigma)^2
+  spec(S/2) = ('36/37', '1/37') ; spec(rho) = ('1', '0') ; spec(sigma) = ('1', '0')
+  LHS = Tr(|rho-sigma| A) = 12/37 (exact) ; Tr(S A^2) = 2/37 (exact)
+  base e: delta in [0.1242508373896309292735451, 0.1242508373896309292735451]
+          LHS^2 - RHS^2 in [0.0514561755042647844193289, 0.0514561755042647844193289]
+          (LHS/RHS)^2  in [1.9576789046537448468358299, 1.9576789046537448468358299]
+  ok    m=6 base e: violation certified, expected violation
+  base 2: delta in [0.1792560669283215368667446, 0.1792560669283215368667446]
+          LHS^2 - RHS^2 in [0.0276701302983445216763237, 0.0276701302983445216763237]
+          (LHS/RHS)^2  in [1.3569596132024252370297166, 1.3569596132024252370297166]
+  ok    m=6 base 2: violation certified, expected violation
+
+m = 7  (N = 49)
+  ok    m=7: literal matrices (as typed in CERT.md) equal the family formula
+  ok    m=7: rho, sigma PSD with trace 1; A PSD (exact)
+  ok    m=7: tr(rho - sigma) = 0 and (rho - sigma)^2 = (-det) I exactly
+  ok    m=7: -det(rho - sigma) = 49/625 is a rational square, s = 7/25
+  ok    m=7: |rho-sigma| = s I is PSD and squares to (rho-sigma)^2
+  spec(S/2) = ('49/50', '1/50') ; spec(rho) = ('1', '0') ; spec(sigma) = ('1', '0')
+  LHS = Tr(|rho-sigma| A) = 7/25 (exact) ; Tr(S A^2) = 1/25 (exact)
+  base e: delta in [0.0980391132797319806122594, 0.0980391132797319806122594]
+          LHS^2 - RHS^2 in [0.0470274837504857662040769, 0.0470274837504857662040769]
+          (LHS/RHS)^2  in [2.4990026103250143670575377, 2.4990026103250143670575377]
+  ok    m=7 base e: violation certified, expected violation
+  base 2: delta in [0.1414405425418206451543789, 0.1414405425418206451543789]
+          LHS^2 - RHS^2 in [0.0331390263866173935505987, 0.0331390263866173935505987]
+          (LHS/RHS)^2  in [1.7321766135587273818583281, 1.7321766135587273818583281]
+  ok    m=7 base 2: violation certified, expected violation
+
+By-hand reduction, m = 5 (natural log):
+  ok    e > 1 + 1 + 1/2 = 5/2 > 2, so e^5 > 2^5 = 32 > 26, hence ln 26 < 5 < 21/4
+  ok    ln(26/25) < 1/25 (enclosure upper end 0.0392207131532812962692008), so h(1/26) = ln(26)/26 + (25/26) ln(26/25) < (1 + ln 26)/26
+  ok    independently of e: ln 26 < 21/4 from the series enclosure (upper end 3.2580965380214820454707195)
+  ok    (1 + 21/4)/26 = 25/104 and 8 * (25/104) * (1/13) = (5/13)^2 = LHS^2: so ln 26 < 21/4 gives RHS^2 < LHS^2
+
+Certified constants (rational enclosures, 25 decimals, truncated):
+  m=5: LHS = 5/13 exactly ; Tr(S A^2) = 1/13 exactly
+        delta_e in [0.1630236294943659404692593, 0.1630236294943659404692593] ; (LHS/RHS_e)^2 in [1.4745384833486548170057705, 1.4745384833486548170057705]
+        delta_2 in [0.2351933818192414914154291, 0.2351933818192414914154291] ; (LHS/RHS_2)^2 in [1.0220721923602579505072445, 1.0220721923602579505072445]
+        LHS^2 - RHS_e^2 in [0.0476067605478458117822309, 0.0476067605478458117822309]
+        LHS^2 - RHS_2^2 in [0.0031946052709993188922802, 0.0031946052709993188922802]
+  m=7: LHS = 7/25 exactly ; Tr(S A^2) = 1/25 exactly
+        delta_e in [0.0980391132797319806122594, 0.0980391132797319806122594] ; (LHS/RHS_e)^2 in [2.4990026103250143670575377, 2.4990026103250143670575377]
+        delta_2 in [0.1414405425418206451543789, 0.1414405425418206451543789] ; (LHS/RHS_2)^2 in [1.7321766135587273818583281, 1.7321766135587273818583281]
+        LHS^2 - RHS_e^2 in [0.0470274837504857662040769, 0.0470274837504857662040769]
+        LHS^2 - RHS_2^2 in [0.0331390263866173935505987, 0.0331390263866173935505987]
+
+  ok    no flint / mpmath / numpy / sympy / gmpy2 / scipy loaded (found: none)
+  ok    no float used: every interval endpoint is a Fraction (enforced in I.__init__)
+PASS: OZ-1 cross-check (pure Fractions). Literal inequality violated for m = 4..7 (natural log)
+      and m = 5..7 (base 2); not violated for m = 1..3 (natural) and m = 1..4 (base 2).
+run_cert.sh: exit code 0, wall time 449.63 s

@@ -1,0 +1,536 @@
+ℹ [1618/1690] Replayed Pipeline.HartRowley.Main
+info: Pipeline/HartRowley/Main.lean:155:0: 'HartRowley.relations_H3' depends on axioms: [propext, Classical.choice]
+info: Pipeline/HartRowley/Main.lean:156:0: 'HartRowley.table_ok' depends on axioms: [propext, Classical.choice]
+info: Pipeline/HartRowley/Main.lean:157:0: 'HartRowley.bfs_reaches_all' depends on axioms: [propext, Classical.choice]
+info: Pipeline/HartRowley/Main.lean:158:0: 'HartRowley.lenData_ok' depends on axioms: [propext, Classical.choice]
+info: Pipeline/HartRowley/Main.lean:159:0: 'HartRowley.involData_ok' depends on axioms: [propext, Classical.choice]
+info: Pipeline/HartRowley/Main.lean:160:0: 'HartRowley.witness_facts' depends on axioms: [propext, Classical.choice]
+info: Pipeline/HartRowley/Main.lean:161:0: 'HartRowley.h3_table' depends on axioms: [propext, Classical.choice]
+info: Pipeline/HartRowley/Main.lean:162:0: 'HartRowley.h3_counterexample' depends on axioms: [propext, Classical.choice]
+⚠ [1914/2058] Replayed Pipeline.Smoke.Main
+warning: Pipeline\Smoke\Main.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: Pipeline/Smoke/Main.lean:7:0: 'smoke' depends on axioms: [propext]
+⚠ [1915/2058] Ran Pipeline.Smoke.Main:irArts
+warning: Pipeline\Smoke\Main.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6851/6965] Replayed Pipeline.KuhlMcGinn.Main
+warning: Pipeline\KuhlMcGinn\Main.lean: imports `Mathlib.Data.Fintype.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: Pipeline/KuhlMcGinn/Main.lean:269:0: 'KuhlMcGinn.W.shape' depends on axioms: [propext, Classical.choice]
+info: Pipeline/KuhlMcGinn/Main.lean:270:0: 'KuhlMcGinn.W.partial_latin' depends on axioms: [propext, Classical.choice]
+info: Pipeline/KuhlMcGinn/Main.lean:271:0: 'KuhlMcGinn.W.not_completable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/KuhlMcGinn/Main.lean:272:0: 'KuhlMcGinn.V.shape' depends on axioms: [propext, Classical.choice]
+info: Pipeline/KuhlMcGinn/Main.lean:273:0: 'KuhlMcGinn.V.partial_latin' depends on axioms: [propext, Classical.choice]
+info: Pipeline/KuhlMcGinn/Main.lean:274:0: 'KuhlMcGinn.V.not_completable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/KuhlMcGinn/Main.lean:275:0: 'KuhlMcGinn.Control.completable' depends on axioms: [propext, Classical.choice]
+⚠ [6852/6965] Ran Pipeline.KuhlMcGinn.Main:irArts
+warning: Pipeline\KuhlMcGinn\Main.lean: imports `Mathlib.Data.Fintype.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6941/6965] Replayed Pipeline.Ozawa.Spectral
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6942/6965] Ran Pipeline.Ozawa.Spectral:irArts
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6955/6965] Replayed Pipeline.Ozawa.Scalar
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline/Ozawa/Scalar.lean:42:10: `Real.exp_nat_mul` has been deprecated: Use `Real.exp_natCast_mul` instead
+
+Hint: Replace the deprecated name:
+  R̵e̵a̵l̵.̵e̵x̵p̵_̵n̵a̵t̵_̵m̵u̵l̵e̲x̲p̲_̲n̲a̲t̲C̲a̲s̲t̲_̲m̲u̲l̲
+⚠ [6956/6965] Ran Pipeline.Ozawa.Scalar:irArts
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6957/6965] Replayed Pipeline.Ozawa.Witness
+warning: Pipeline\Ozawa\Witness.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Base` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6958/6965] Ran Pipeline.Ozawa.Witness:irArts
+warning: Pipeline\Ozawa\Witness.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Base` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6959/6965] Replayed Pipeline.Ozawa.Rational
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline/Ozawa/Rational.lean:48:57: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rho, sig5, Matrix.mul_apply, Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Pipeline/Ozawa/Rational.lean:55:25: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rho, sig5, A5]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Pipeline/Ozawa/Rational.lean:62:45: This simp argument is unused:
+  Matrix.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rho, sig5, A5, Matrix.trace_fin_two, Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Pipeline/Ozawa/Rational.lean:62:63: This simp argument is unused:
+  Fin.sum_univ_two
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rho, sig5, A5, Matrix.trace_fin_two, Matrix.mul_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Pipeline/Ozawa/Rational.lean:93:57: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rho, sig7, Matrix.mul_apply, Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Pipeline/Ozawa/Rational.lean:100:25: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rho, sig7, A7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Pipeline/Ozawa/Rational.lean:107:45: This simp argument is unused:
+  Matrix.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rho, sig7, A7, Matrix.trace_fin_two, Fin.sum_univ_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Pipeline/Ozawa/Rational.lean:107:63: This simp argument is unused:
+  Fin.sum_univ_two
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rho, sig7, A7, Matrix.trace_fin_two, Matrix.mul_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [6960/6965] Ran Pipeline.Ozawa.Rational:irArts
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6961/6965] Replayed Pipeline.Ozawa.Main
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Witness.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Base` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Witness.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Base` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: Pipeline/Ozawa/Main.lean:34:0: 'Pipeline.Ozawa.ozawa_question_literal_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:35:0: 'Pipeline.Ozawa.ozawa_question_literal_false_bits' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:36:0: 'Pipeline.Ozawa.ozawa_question_literal_false_rpow' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:37:0: 'Pipeline.Ozawa.ozawa_literal_fails_m5' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:38:0: 'Pipeline.Ozawa.ozawa_literal_fails_m5_bits' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:39:0: 'Pipeline.Ozawa.ozawa_literal_fails_m7' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:40:0: 'Pipeline.Ozawa.ozawa_literal_fails_m7_bits' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:41:0: 'Pipeline.Ozawa.cfc_twoProj' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:42:0: 'Pipeline.Ozawa.cfc_norm_of_mul_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:43:0: 'Pipeline.Ozawa.abs5C' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:44:0: 'Pipeline.Ozawa.abs7C' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:45:0: 'Pipeline.Ozawa.delta5C' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:46:0: 'Pipeline.Ozawa.delta5C₂' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:47:0: 'Pipeline.Ozawa.delta7C' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:48:0: 'Pipeline.Ozawa.delta7C₂' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:49:0: 'Pipeline.Ozawa.D5_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:50:0: 'Pipeline.Ozawa.W5_spectral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:51:0: 'Pipeline.Ozawa.q5' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:52:0: 'Pipeline.Ozawa.A5_eq_outer' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:53:0: 'Pipeline.Ozawa.D7_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:54:0: 'Pipeline.Ozawa.W7_spectral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:55:0: 'Pipeline.Ozawa.q7' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:56:0: 'Pipeline.Ozawa.A7_eq_outer' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:57:0: 'Pipeline.Ozawa.log_26_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:58:0: 'Pipeline.Ozawa.ozawa_m5_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:59:0: 'Pipeline.Ozawa.ozawa_m5_base2' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:60:0: 'Pipeline.Ozawa.ozawa_m7_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Pipeline/Ozawa/Main.lean:61:0: 'Pipeline.Ozawa.ozawa_m7_base2' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [6962/6965] Ran Pipeline.Ozawa.Main:irArts
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Witness.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Base` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Witness.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Base` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6963/6965] Replayed Pipeline
+warning: Pipeline.lean: imports `Mathlib.Data.Nat.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Smoke\Main.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Smoke\Main.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Witness.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Base` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Witness.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Base` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Witness.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Base` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Witness.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Base` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\KuhlMcGinn\Main.lean: imports `Mathlib.Data.Fintype.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\KuhlMcGinn\Main.lean: imports `Mathlib.Data.Fintype.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Witness.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Base` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Witness.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Base` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [6964/6965] Ran Pipeline:irArts
+warning: Pipeline.lean: imports `Mathlib.Data.Nat.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Smoke\Main.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Smoke\Main.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Witness.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Base` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Witness.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Base` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.LinearAlgebra.Matrix.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Rational.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Witness.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Base` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Witness.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Base` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\KuhlMcGinn\Main.lean: imports `Mathlib.Data.Fintype.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\KuhlMcGinn\Main.lean: imports `Mathlib.Data.Fintype.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+Build completed successfully (6965 jobs).

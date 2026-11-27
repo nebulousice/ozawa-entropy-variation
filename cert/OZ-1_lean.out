@@ -1,0 +1,52 @@
+== lake build
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Witness.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Base` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.HermitianFunctionalCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.ContinuousFunctionalCalculus.Abs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Spectral.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.SpecialFunctions.BinaryEntropy` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Analysis.Complex.ExponentialBounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\Ozawa\Scalar.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\KuhlMcGinn\Main.lean: imports `Mathlib.Data.Fintype.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Pipeline\KuhlMcGinn\Main.lean: imports `Mathlib.Data.Fintype.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+Build completed successfully (6965 jobs).
+== sorry / admit scan
+== axioms
+'Pipeline.Ozawa.ozawa_question_literal_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.ozawa_question_literal_false_bits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.ozawa_question_literal_false_rpow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.ozawa_literal_fails_m5' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.ozawa_literal_fails_m5_bits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.ozawa_literal_fails_m7' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.ozawa_literal_fails_m7_bits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.cfc_twoProj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.cfc_norm_of_mul_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.abs5C' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.abs7C' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.delta5C' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.delta5C₂' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.delta7C' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.delta7C₂' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.D5_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.W5_spectral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.q5' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.A5_eq_outer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.D7_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.W7_spectral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.q7' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.A7_eq_outer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.log_26_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.ozawa_m5_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.ozawa_m5_base2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.ozawa_m7_nat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Pipeline.Ozawa.ozawa_m7_base2' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS lean_check Ozawa (Lean (version 4.37.0-rc1, x86_64-w64-windows-gnu, commit 0b77e12952ad39077d80d8bd6b66d601f225c321, Release))
